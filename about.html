@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script></script>
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="Steve's Personal Portfolio">
     <meta name="author" content="Steve Padmanaban">
@@ -22,6 +22,19 @@
                 <a class="#about" style="margin-right:20px;" href="about.html">About</a>
                 <a class="#projects" style="margin-right:20px;" href="projects.html">Projects</a>
                 <a class="#hobby" href="hobbies.html">Hobbies</a>
+                <div id="themePicker">
+                    <label for="themeSelect">Choose Theme:</label>
+                    <select id="themeSelect">
+                        <option value="original">Original</option>
+                        <option value="night">Night</option>
+                        <option value="minima">Minima</option>
+                        <option value="cayman">Cayman</option>
+                        <option value="midnight">Midnight</option>
+                        <option value="modernist">Modernist</option>
+                        <option value="slate">Slate</option>
+                        <option value="hacker">Hacker</option>
+                    </select>
+                </div>
             </nav>
         </div>
         <br>
@@ -62,44 +75,40 @@
 
         <section>
             <search>
-                <form id="contact">
+                <form action="https://httpbin.org/get" method="get" id="contact" autocomplete="off">
                     <fieldset>
                         <legend>Contact</legend>
-                        <label>First Name
-                            <input type="text" required><br>
-                        </label><br>
-
-                        <label>Last Name
-                            <input type="text" required><br>
-                        </label><br>
-
-                        <label>Email
-                            <input type="email" required><br><br>
-                        </label><br>
-
-                        <label>Occupation:
-                            <select>
-                                <optgroup label="Occupations">
-                                    <option>Student</option>
-                                    <option>Professor</option>
-                                    <option>Recruiter</option>
-                                    <option>Other</option>
-                                </optgroup>
-                            </select><br><br>
-                        </label>
-
-                        <label>Gender:
-                            <input list="genders">
-                            <datalist id="genders">
-                                <option value="Male">
-                                <option value="Female">
-                            </datalist>
-                        </label><br><br>
-                        <label><strong>Feel Free to Write Anything:</strong>
-                            <textarea></textarea>
-                        </label><br>
-                        <br><br>
-                        <button class="formBtn">Let's Talk!</button>
+                
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span>:</label>
+                            <input type="text" name="firstName" id="firstName" required minlength="2" maxlength="50">
+                            <output class="error"></output>
+                            <output class="info"></output>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span>:</label>
+                            <input type="text" name="lastName" id="lastName" required minlength="2" maxlength="50">
+                            <output class="error"></output>
+                            <output class="info"></output>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span>:</label>
+                            <input type="email" name="email" id="email" required>
+                            <output class="error"></output>
+                            <output class="info"></output>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="comments" ><strong>Comments:</strong></label>
+                            <textarea id="comments" name="comments"></textarea>
+                            <output class="error"></output>
+                            <output class="info"></output>
+                        </div>
+                
+                        <input type="hidden" name="possible_bot" value="true">
+                        <input type="submit" class="btn" value="Let's Talk!">
                     </fieldset>
                 </form>
             </search>

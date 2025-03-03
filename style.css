@@ -1,17 +1,20 @@
 :root {
     --bg-color: lightblue;
+    --text-color: black;
     --default-pad-size: 20px;
     --default-radius: 8px;
 }
 
 @media (max-width: 768px) {
     .navBar {
+        color: var(--text-color);
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
     }
 
     .navBar a {
+        color: var(--text-color);
         margin: 10px 0;
         font-size: 16px;
     }
@@ -72,11 +75,13 @@
 
 @media (min-width: 1025px) {
     .navBar {
+        color: var(--text-color);
         justify-content: flex-end;
         padding: 10px 20px;
     }
 
     .navBar a {
+        color: var(--text-color);
         margin: 0 20px;
     }
 
@@ -105,7 +110,8 @@
 background-section {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-color, lightblue);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 
     padding: var(--default-pad-size, 20);
     border-radius: var(--default-radius, 8);
@@ -151,17 +157,18 @@ picture, img, svg{
     object-position:center top;
 }
 
-.formBtn {
+.btn {
     transform: transform 0.3s ease-in-out;
 }
 
-.formBtn:hover {
+.btn:hover {
     transform: scale(1.1);
 }
 
 nav {
     a {
         transition: transform 0.3s ease-in-out;
+        color: var(--text-color);
     }
 
     a:hover {
@@ -178,7 +185,52 @@ nav {
     color: white;
 }
 
-form:has(input:user-invalid) label:has(input[required]:user-invalid) {
+#contact {
+    display:flex;
+}
+
+
+.form-group {
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label .required {
     color: red;
     font-weight: bold;
 }
+
+input:user-invalid {
+    border: 2px dashed red;
+}
+
+output {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1.5s ease-in-out; /* Fade out smoothly */
+}
+
+.info {
+    color: blue;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+#themePicker {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
