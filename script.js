@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "firstName", pattern: /^[a-zA-Z'-]+$/, message: "Only letters, apostrophes, and hyphens are allowed." },
         { id: "lastName", pattern: /^[a-zA-Z'-]+$/, message: "Only letters, apostrophes, and hyphens are allowed." },
         { id: "email", pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Please enter a valid email address." },
-        { id: "comments", pattern: /^[a-zA-Z0-9\s]+$/, message: "Invalid character detected!" }
+        { id: "comments", pattern: /^[a-zA-Z0-9\s.,!?'"-]+$/, message: "Invalid character detected!" }
     ];
 
     fields.forEach(field => {
